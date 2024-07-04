@@ -1,0 +1,3 @@
+def Mul(a,b):
+    return a*b
+print(Mul(5,2))
