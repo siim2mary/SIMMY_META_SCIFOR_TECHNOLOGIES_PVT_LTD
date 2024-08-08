@@ -6,7 +6,7 @@ import google.generativeai as gen_ai
 
 
 # Load environment variables
-#load_dotenv()
+load_dotenv()
 
 # Configure Streamlit page settings
 st.set_page_config(
