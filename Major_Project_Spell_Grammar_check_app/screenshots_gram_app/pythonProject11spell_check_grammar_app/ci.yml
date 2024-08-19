@@ -1,0 +1,35 @@
+name: Continuous Integration
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # You can choose windows-latest if you prefer
+
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Upgrade pip
+      run: python -m pip install --upgrade pip
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        pytest  # Or any other test command you use
+
+    - name: Run spell7.py
+      run: |
+        python spell7.py
+
+    - name: Run spell_gram.py
+      run: |
+        python spell_gram.py
